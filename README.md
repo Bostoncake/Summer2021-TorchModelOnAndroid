@@ -7,5 +7,5 @@ An implementation of object detection models on Android systems. This implementa
 | Name | E-mail |
 | ---- | ---- |
 | 熊翊哲 | xiongyizhe2001@163.com |
-| 杨会越 |      |
+| 杨会越 | yanghy18@163.com     |
 | 徐鑫浩 |      |

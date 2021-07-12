@@ -1,6 +1,7 @@
 # YOLO v3 implementation
 
 从零开始实现YOLO v3：https://blog.paperspace.com/how-to-implement-a-yolo-object-detector-in-pytorch/
+
 Corresponding GitHub repo: https://github.com/ayooshkathuria/YOLO_v3_tutorial_from_scratch
 
 ## How does it work?
@@ -19,9 +20,20 @@ Corresponding GitHub repo: https://github.com/ayooshkathuria/YOLO_v3_tutorial_fr
   - Shortcut: 将不同层之间的卷积输出相连，类似于残差块，但是权重和连接方式随不同的backbone而不同；
   - Upsample: 上采样层，DarkNet采用双线性插值上采样；
   - Route: 路由层，实际上就是把几个层拼在一起（concatenate）；
+  - YOLO: 检测层，网络中一共有3个，分别在不同的尺度完成检测任务；
 - Tricks in implementing the layers:
   - Track filter numbers of all preceding layers: depth of kernels in upcoming layers require the information;
   - A block contains many layers;
   - As for route layer: use dummy layer to represent it in nn.Module, but define calculation in `forawrd` function;
 - Tricks in implementing forward pass:
-  - 
+  - `contiguous()` after using `transpose()` in tensor re-shaping: make the re-shaped tensor occupying an independent memory space;
+  - `view()` does not change the actual arrangement of data; note that `view()` is a torch function;
+  - Usage of some numpy functions: `meshgrid()`, `reshape()`; some torch functions: `unsqueeze()` as well;
+- Doing forward tests:
+  - Change the img input size to the size mentioned in cfg file;
+  - ALL TENSORS SHOULD BE ON GPU IF CUDA USED!!!!
+- Using official weights;
+- When input is 416\*416, output is 1\*10647\*85, input 608\*608 and output is 1\*22743\*85;
+- 
+
+  

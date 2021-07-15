@@ -87,3 +87,5 @@ lint/tmp/
 # implementation
 implementation/yolov3.weights
 implementation/__pycache__
+implementation/*.pth
+implementation/*.pt

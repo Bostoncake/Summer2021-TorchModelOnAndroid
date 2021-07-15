@@ -330,3 +330,5 @@ print(pred.shape)
 res = write_results(pred, 0.7, 80, 0.4)
 print(res)
 print(res.shape)
+
+torch.save(model.state_dict(), 'yolov3.pt')

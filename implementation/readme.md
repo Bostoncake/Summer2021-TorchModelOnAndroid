@@ -34,6 +34,5 @@ Corresponding GitHub repo: https://github.com/ayooshkathuria/YOLO_v3_tutorial_fr
   - ALL TENSORS SHOULD BE ON GPU IF CUDA USED!!!!
 - Using official weights;
 - When input is 416\*416, output is 1\*10647\*85, input 608\*608 and output is 1\*22743\*85;
-- 
 
   
